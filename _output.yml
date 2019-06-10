@@ -1,0 +1,12 @@
+bookdown::gitbook:
+  css: styles.css
+  config:
+    toc:
+      collapse: section
+      scroll_highlight: yes
+  sharing:
+    twitter: yes
+  fontsettings:
+    theme: sepia
+bookdown::html_book:
+  split_by: chapter

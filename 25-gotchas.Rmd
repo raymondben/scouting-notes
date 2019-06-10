@@ -1,0 +1,14 @@
+# Common VBStats issues
+
+- As of VBStats version 2.34.232, it is not possible to enter further actions (during the same point) after a serve ace or attack kills. But we want to know who made the reception or (in some cases) dig error, so we need to enter that action as well. There are three options, with the first being the preferred method:
+
+    - enter the serve as S3 (with its ball path and serve type), then enter the pass action (error), then go back and alter the serve evaluation to "Ace". This will also work for attack kills/dig errors (enter the attack as "Spike in play" first, then the dig error, then change the spike to "Kill"). This is probably the best way to do it.
+    - enter only the reception error. The serve action will be automatically entered, but you'll have to go back to the serve and enter its ball path and serve type. (This won't work for attack kill/dig errors though).
+    - use the [short cut panel](http://peranasports.com/VBStatsHD/Guide/lessons/How_to_code.html) for two-team scouting to enter the passing player number and pass error, then go back to the serve and enter the ball path and serve type. (This also won't work for attack kill/dig errors).
+
+- If the right-hand tool bar is showing the wrong server (a team's rotation has gotten out of whack), you can change the server with the lineup button (button 9 at the bottom of [this page](http://peranasports.com/VBStatsHD/Guide/lessons/Screen_detail.html)).
+
+- If the scores needs adjusting (e.g. if the video has dropped out for a period of time, and you need to re-start scouting when the video comes back on), click the scores in the middle of the top toolbar ([button 6](http://peranasports.com/VBStatsHD/Guide/lessons/Screen_detail.html)) and adjust as appropriate. You might also need to adjust the team rotations with the lineup button (see previous point).
+
+- To edit the setting zone that has been assigned to an already-entered attack, go to the video screen (the video frame icon at the top right of the match detail screen, which is button 23 [here](http://peranasports.com/VBStatsHD/Guide/lessons/Match_detail.html)). Find the action to edit, and left-swipe. Click the pencil icon and edit as required. This also allows you to un-select the setting zone (i.e. set it back to "no setting zone"), which you can't currently do during live scouting.
+

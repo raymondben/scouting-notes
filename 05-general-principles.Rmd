@@ -1,0 +1,56 @@
+# General principles
+
+TBD: why do this. What do we want to get from it.
+
+Components to the process:
+
+1. Collecting match data (aka "scouting"). This is the raw play-by-play information that, on its own, does not provide actionable information. It's just raw data.
+2. Turning the play-by-play data into actionable information, such as performance indicators that allow the team to evaluate individual player performance as well as the effectiveness of its offensive/defensive strategies. Scouting software packages generally provide this type of analytical functionality, but other options are also possible (specific apps for analysis, that are separate from the scouting software).
+3. Communicating that information to the coaches and players, and ensuring that the information being generated is appropriate for the training and match strategies of the team. For example, if the team is using a particular defensive strategy, the statistics that we generate should provide information that allows performance against that strategy, and the overall effectiveness of that strategy, to be evaluated.
+
+In this guide we're mostly focusing on #1, but bearing in mind that we need to deliver #2 and #3.
+
+## Principles
+
+We want to collect our raw data in such a way that it:
+
+- is as objective as possible, by minimizing subjective assessments by the scout.
+- is consistent (from one scout to another, and also over time for the same scout).
+- maximizes the value of that data for different analyses (i.e. we can answer a range of different questions using these data, rather than collecting data that can only be used to answer a narrow range of questions). In particular we want to keep our options open for answering questions that we haven't thought of yet. There is a distinction between the *data being scouted* and the *information that can be extracted from those data*. In some cases the information that we want to report isn't directly obvious in the data that we are collecting, and some further statistical analysis is required to extract it.
+- is efficient, by balancing the demands on the scout against the value of the information that we ask them to collect. Every extra detail that we ask them to scout adds effort: does that extra detail actually give us valuable information? Can we avoid scouting it manually because it be inferred or filled in automatically later?
+- follows any established community norms or conventions, if necessary.
+
+
+## Software
+
+### Scouting
+
+a. DataVolley (https://www.dataproject.com/Products/EU/en/Volleyball/DataVolley4) is the well-established standard software, and is used by many national and professional teams. It is capable of recording all match information that you are ever likely to need, but comes with the disadvantage of price and complexity.
+
+b. VBStats (http://peranasports.com/software/vbstatshd/) is an iPad-based scouting app developed by the Australian-based company Perana Sports. It is not quite as capable as DataVolley, but is nevertheless comprehensive (especially when used with the untan.gl apps described below). It is considerably easier to use than DataVolley, and also considerably cheaper (~$40 AUD for a perpetual license).
+
+### Analysis
+
+#### Inbuilt
+
+DataVolley, VBStats, and other scouting packages generally have analytical capability. This is convenient, but may be limited. DataVolley capabilities can be extended through custom worksheets, but with other packages (e.g. VBStats) you are limited to what the app provides.
+
+#### Online apps
+
+Science Untangled maintains a [suite of online analytical apps](https://apps.untan.gl/). They work with files scouted in DataVolley or VBStats and provide analytical capability that complements or improves on the inbuilt analytical capabilities of those packages.
+
+#### R
+For complete control and customization, you can write your own analysis routines if you are so inclined. The R packages [peranavolley](https://github.com/raymondben/peranavolley) and [datavolley](https://github.com/raymondben/datavolley) provide a starting point for this, by allowing DataVolley and VBStats files to be read into the R software package. You then have the full arsenal of R's inbuilt statistical and graphing capability at your disposal, as well as its [~15,000 user-contributed packages](https://cran.r-project.org/web/packages/). The untan.gl apps are built with R.
+
+
+## Scouting principles
+
+### Scouting from video
+
+TBD, details.
+
+### Live scouting
+
+Same, but because we are scouting in real-time we are generally limited in what can be scouted. The focus is therefore on scouting the data that gives the most valuable in-game information for the coach.
+
+

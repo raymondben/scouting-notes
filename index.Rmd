@@ -1,0 +1,22 @@
+---
+title: "Volleyball scouting notes"
+author: Ben Raymond
+description: Notes on volleyball scouting
+documentclass: book
+site: bookdown::bookdown_site
+url: 'https\://raymondben.github.io/scouting-notes/'
+github-repo: "raymondben/scouting-notes"
+cover-image: "images/cover.png"
+---
+
+# About this
+
+Blah blah
+
+```{r mainsetup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, collapse = TRUE, comment = "#>", warning = FALSE, message = FALSE)
+
+library(dplyr)
+our_setting_zones <- tibble(`Setting zone` = 1:5, `Attack type` = c("Quick ball in front", "Quick ball behind", "Quick ball at a distance in front of the setter, sometimes called a B-quick", "Slide attack", "High ball"), `Equivalent DataVolley attack code` = c("X1", "X2", "X7", "CF", "V5, VP, etc"))
+
+```

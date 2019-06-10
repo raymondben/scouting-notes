@@ -1,0 +1,137 @@
+```{r setup, include = FALSE}
+library(dplyr)
+```
+
+# VBStats scouting from video
+
+This guide describes a particular set of conventions for scouting volleyball matches using the Perana Sports VBStats app. These conventions are intended to give consistent scouted files that work well with the `peranavolley` R package, but without requiring an overly-onerous scouting procedure. Scouts should be familiar with the [VBStats User Guide](http://peranasports.com/VBStatsHD/Guide/VBStatsHD.html), in particular the [Actions and Results](http://peranasports.com/VBStatsHD/Guide/lessons/Actions_and_results.html) and "Coding from a video (both teams)" sections.
+
+```{r include = FALSE}
+##These conventions are supported by the `pv_tas_recode()` function, which changes some of the skills, evaluations, and other details of a scouted VBStats file following this guide.
+```
+
+## Skill evaluations
+
+### Passes (serve receptions) and digs
+
+- P3 = a good or perfect pass, giving the setter the option to set to any attacker (in DataVolley this would be scouted as "R#" or "R+")
+- P2 = an "ok" pass (DataVolley "R!"), giving restricted attack options (but still more than one option). Often these are passes that force the setter to set from 3m or more from the net. The setter doesn't have the option to set a true first tempo, but outside attacks can be made at normal medium/fast tempo. Note that some setters will still set their middle on these sets with a slower (low) quick ball. Mild overpasses or poorly positioned passes might also be rated as P2, if the setter only has two real options (say, the quick hitter and opposite on a low pass to position 2)
+- P1 = a negative pass or an overpass (DataVolley "R-" or "R/"), generally only allowing a high ball set to be made or even no proper attack at all (a freeball back to the opposition or an overapass)
+
+Rotation error by the receiving team: TBD
+
+
+### Serves
+
+Rate serves by pass quality, so that a poor serve (S1) is one that allowed a perfect pass (P3), an OK serve (S2) with an OK pass (P2), and a good serve (S3) was one that the opposition was only able to make a poor pass (P1) on.
+
+On serve errors, enter the ball path and also indicate the reason (net/out long/out side).
+
+Rotation error by the serving team: TBD
+
+## Entering ball paths
+
+Enter the ball path for all serves and attacks, showing the start and end points of the serve or attack. It's easiest to expand the court diagram to do this (this will happen automatically for attacks, but for serves you may need to use the small white square in the bottom-right of the court diagram). You can re-draw the ball path several times if you aren't happy with it on the first attempt.
+
+For attacks, the starting location is used to label the attack type, so it's important that the starting location is behind the 3m line for back row attacks, and in front of the 3m line for front-row attacks. If it's a front-row player making the attack, enter the starting coordinate in front of the 3m line, even if they actually attack from behind it. Similarly, if it's a back row attack, make sure the starting coordinate is behind the 3m line (even though in reality the attack might be contacting the ball in the air in front of the 3m line). The only time you would enter a coordinate in front of the 3m line for a back-row attacker is if they put a freeball over from in front of the 3m line (starting coordinates aren't used to classify freeballs, only actual attacks).
+
+The coach/technical coordinator might also ask for ball paths to be entered for sets. The start point is the important piece of information in this case (so that we know where the setter made the set from). This information allows for setter choices to be examined according to where on court they made the set from, but this is not always needed.
+
+## Skill-specific conventions
+
+### Sets
+
+Unless the coach/technical coordinator has asked for sets to be scouted, don't scout setting actions *except* for set errors. Setter dumps are always entered (but these are entered as attack actions of type "dump", not as set actions).
+
+If we scout all setting actions, it's extra work for the scout, but it allows some additional statistical insight. In particular, we can examine how a setter changes their set choice depending on where on court the pass goes (e.g. where does a setter tend to set given a poor pass to position 4, compared to a poor pass to position 2?). Thus, if the coach/technical director has asked for setting actions to be scouted, then *all* sets should be scouted, including the ball path of the set. The starting position of the ball path is where the setter sets from; the end of the ball path is where the set goes to (where the attacker makes contact with the ball, or where ball bounces/hits the net in those situations).
+
+Do not select the "Record assists" option in the app settings. Doing this will cause a set action to be automatically inserted, but *only* on attack kills. Thus, we don't get consistent scouting of setting actions.
+
+### Attacks
+
+An attack that goes off the block these should be scouted as "off-block" by selecting that option in the [detail screen](http://peranasports.com/VBStatsHD/Guide/lessons/images/How_to_code/media_1508305638411.png) and entering a [ball path that goes off the block](http://peranasports.com/VBStatsHD/Guide/lessons/Draw_ball_paths.html).
+
+Enter the number of blockers on each attack.
+
+#### Setting zones
+
+Setting zones are used in VBStats to indicate particular attack types. When you scout an attack, you can optionally assign one of five pre-designated setting zones. You can also leave the setting zone un-assigned. We use the setting zone in conjunction with the attack coordinates to generate more meaningful attack descriptions.
+
+Use the following setting zones:
+
+```{r}
+knitr::kable(our_setting_zones)
+
+```
+
+When we process the scouted file, the following rules are applied:
+
+- If the setting zone has been specified as one of the first four (i.e. not a high ball), the associated DataVolley attack code (X1, X2, etc) will be inserted into the `attack_code` column of the data.
+- If setting zone 5 (high ball) has been specified, the attack will be labelled according to its starting coordinate. For example, a highball attack from position 4 will be given the `attack_code` V5, and a back-row right-side highball (from position 9 or 1) will be given V8.
+- If the setting zone has been left empty, the attack will be given an attack code according to its starting coordinate, assuming a standard tempo attack. For example, an outside hit from position 4 will be `attack_code` X5 (this type of attack is also known as a "black" or "11"), and a back-row middle attack (from position 8 or 6) will be `attack_code` XP (pipe).
+
+### Freeballs
+
+As of VBStats version 2.34.232, there isn't a specific action for freeballs. A freeball over (i.e. an easy ball put over the net to the opposition when no attack is possible) should be scouted as an attack, with the attack type "Dump". A freeball dig (the subsequent dig made on such a ball) should be scouted as a normal defense (dig) action.
+
+If the freeball over happens to win the point, it is important to include a dig following it, with "error" evaluation. If no opposition player actually performed a dig, scout the dig anyway, and assign it to the player who should have made the dig (see the "Assigning errors" section below).
+
+When the scouted file is processed, any "dump" attacks performed by a setter will be treated as a setter dump, but any "dump" attacks performed by a non-setter will be treated as a freeball over. Additionally, any dig following a freeball over will be treated as a freeball dig. This allows us to examine freeball-specific statistics, if we wish.
+
+### Blocks
+
+TBD - how to handle blocks and block touches.
+
+## Assigning errors
+
+Remember from our general principles that there is a distinction between the scouted data and the information that we generate from it. Sometimes we will scout something as an "error" even though we won't consider it as one when we report the results. The converse can also be true: we might treat something as an error in our report even though it isn't scouted as such in the data. Scouting errors can be confusing!
+
+The following describes our conventions, from most straightforward to most confusing.
+
+### Serve
+Any serve fault is scouted as an error (foot fault, serve out, serve into the net). Rotation errors should also be scouted (not clear how best to do this in VBStats though?)
+
+### Reception
+A serve ace should *always* be accompanied by a reception error, and vice-versa. For a serve ace, the reception error should be assigned to the player who had responsibility for passing that serve. If the ball lands between two receiving players, assign the error to the one that was most at fault. Rotation errors should also be scouted (TBD how to best enter these in VBStats).
+
+### Freeball digs
+Freeball digs are treated the same as receptions. Any loss of point on a freeball dig should be scouted as an error, assigned to the player who had responsibility for the dig.
+
+### Attack
+Direct errors by the attacker (net violation, reach, hit out, hit into the net, back-row attacker inside the 3m line, etc) should be scouted as attack errors.
+
+Blocked attacks are not usually considered to be errors for the purposes of *analysis*, but with some scouting software they must be *scouted* as errors (e.g. in VBStats a blocked attack must be entered as an error, with reason "blocked". These will not be treated as errors in our downstream analyses, though).
+
+### Block
+For blocking, only scout errors that are direct errors by the blocking player (net violation, reach, catch, back-row player blocking, etc).
+An attack hit that goes off the block for a kill is not scouted as a block error (recall that these should be scouted as "off-block" by entering a [ball path that goes off the block](http://peranasports.com/VBStatsHD/Guide/lessons/Draw_ball_paths.html) and selecting the "off-block" option in the [detail screen](http://peranasports.com/VBStatsHD/Guide/lessons/images/How_to_code/media_1508305638411.png) if it has not automatically been selected).
+
+A blocker who is out of position leading to an attack kill is not scouted as an error, even though it might be considered to be one by many coaches. In our downstream analyses, we can get insights into blocker position by other means, so we keep the scouting of "block errors" for direct (unforced) blocking errors.
+
+### Set
+Any set fault that leads directly to the loss of a point (double-contact, net violation, reach, etc) should be scouted as an error, as should any poor set that directly leads to the loss of a point (e.g. an unhittable set).
+
+There is an unavoidable element of subjectivity in this situation: say there was a poor set that the attacker tried to save, but contacted the net in doing so. If the set was clearly un-saveable, then the error was the setter's. If the set was tight on the net (but playable) and the attacker just made a mess of saving it, then the error was the attacker's. But there will be situations where it is not entirely clear whether it was the setter's fault for a poor set or the attacker's fault for failing to play it. There is no simple answer here - assign the error to whichever player you think was most at fault. Set errors are relatively rare, so this one usually doesn't matter tremendously.
+
+Other subjective situations include tactical/decision mistakes, e.g.:
+
+- a set that goes to an attacker who is out of position and makes an error in attempting to hit it (probably scout as attacker error)
+- a set that goes to an attacker with 3 blockers when another attacker is entirely open, and the point is lost on that attack (do not scout as a set error).
+
+### Dig
+
+Dig (defensive) errors are a bit of a perhaps the least clear. Some defensive plays are clearly errors (defender out of position, or an easy ball that should have been dug, or an attack in that was not played because the defender incorrectly decided that it was going to go out). However, there are also many situations in which a defender makes a forced error, say, trying to dig a hard attack hit. We have two choices here.
+
+1. We could assign a dig error to *every* defensive touch that leads to the loss of a point (i.e. forced plus unforced errors). The advantage to this is that we would definitely capture all unforced errors, but the downside is that we will include a lot of forced errors. We will also potentially be assigning errors to a defender that were primarily another player's fault (e.g. a blocker out of position, giving the opposition an attack against no block, leading to a dig "error").<br /><br />
+We can still extract useful information from this data, but it becomes more complicated, and the scouting process is more work for the scout because they will potentially be scouting a lot of defensive errors.
+
+1. Alternatively, we can choose to only scout unforced defensive errors (e.g. defender out of position, a poor dig on an easy opposition attack that should have been defended, or a defender failing to play a ball at all because they decided it was going out).<br /><br />
+The disadvantage to this is that it becomes subjective (e.g. the concept of an "easy opposition attack" will vary from scout to scout and competition to competition). It may also limit the range of analyses that we can later do with these data. However, it's less work for the scout, and it's not clear that the analyses we lose out on are really a major loss.
+
+On balance, we choose the second option: only scout unforced defensive errors.
+
+
+
+
+
+

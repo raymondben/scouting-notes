@@ -1,0 +1,47 @@
+# VBStats live match scouting
+
+- Scout both teams (button 18 [on this screen](http://peranasports.com/VBStatsHD/Guide/lessons/Match_detail.html))
+- The priority is to record the following actions:
+  1. serve
+  1. reception
+  1. first attack
+  1. the action that ended the rally
+
+## Serve
+
+**Required:** the serving player, and the result of the serve.
+
+Except for a serve error, you don't need to explicitly enter the serve action. Instead, enter the reception action, and the serve will be automatically inserted. Just check that the serving team rotation is correct, so that the serve will be credited to the correct player.
+
+For a serve error, you will need to enter the serve action.
+
+Note that an ace should **always** be accompanied by a reception error, assigned to the receiving player who had responsibility for that serve (even if they did not actually play the ball). Don't enter aces by entering the serving action: enter them by entering a reception error. The serve action (and "Ace" result) will automatically be inserted.
+
+**Optional:** If you have time, enter the ball path of the serve.
+
+Don't bother entering the serve type (jump/float/etc) or other details. These would be entered when scouting from video, but are not a priority for live scouting.
+
+## Reception
+
+**Required:** the receiving player, and the result of the reception (Error, P1, P2, or P3).
+
+Remember, a serve ace should always be paired with a reception error, and vice-versa. Otherwise, rate passes P1-P3 according to the guide in the [Scouting from video](scouting-from-video.html) section.
+
+## First attack
+
+**Required:** the attacking player and the setting zone.
+
+The setting zone, despite its name, tells us the type of attack. See the [Scouting from video](scouting-from-video.html) section for details on scouting attacks.
+
+**Optional:** if you have time, also include (in order of importance):
+
+- the number of blockers on the attack
+- the ball path of the attack
+
+## The action that ended the rally
+
+**Required:** the action, player, and result.
+
+For example, if the rally ended with an attack error, we want the attack action to be scouted. For an attack kill, we want the attack action to be scouted AND the associated dig error, if it was an unforced dig error (see \"Assigning errors\" in the [Scouting from video](scouting-from-video.html) section). For attacks, include the number of blockers and setting zone, and the ball path if you have time.
+
+If the rally ended on a serve ace/error, then no extra work should be required. If the rally ended on the first attack, make sure you've recorded any associated dig/block action.
