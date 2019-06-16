@@ -13,6 +13,9 @@ cover-image: "images/cover.png"
 
 Blah blah
 
+Generated using [bookdown](https://github.com/rstudio/bookdown); the source material is [on GitHub](https://github.com/raymondben/scouting-notes).
+
+
 ```{r mainsetup, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE, collapse = TRUE, comment = "#>", warning = FALSE, message = FALSE)
 
