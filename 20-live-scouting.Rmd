@@ -37,6 +37,6 @@ Remember, a serve ace should always be paired with a reception error, and vice-v
 
 **Required:** the action, player, and result.
 
-For example, if the rally ended with an attack error, we want the attack action to be scouted. For an attack kill, we want the attack action to be scouted AND the associated dig error, if it was an unforced dig error (see \"Assigning errors\" in the [Scouting from video](scouting-from-video.html) section). For attacks, include the number of blockers and setting zone, and the ball path if you have time.
+For example, if the rally ended with an attack error, we want the attack action to be scouted. For an attack kill, we want the attack action to be scouted and probably the associated dig error (see \"Assigning errors\" in the [Scouting from video](scouting-from-video.html) section). For attacks, include the number of blockers and setting zone, and the ball path if you have time.
 
 If the rally ended on a serve ace/error, then no extra work should be required. If the rally ended on the first attack, make sure you've recorded any associated dig/block action.
