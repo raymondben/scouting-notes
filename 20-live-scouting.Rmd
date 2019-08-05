@@ -29,7 +29,9 @@ Remember, a serve ace should always be paired with a reception error, and vice-v
 
 ## First attack
 
-**Required:** the attacking player, the number of blockers on the attack, and the result of the attack.
+**Required:** the attacking player and the result of the attack.
+
+**Desirable:** the number of blockers on the attack.
 
 **Optional:** if you have time, also include the ball path of the attack and the setting zone. (The setting zone, despite its name, tells us the type of attack. See the [Scouting from video](scouting-from-video.html) section for details on scouting attacks.)
 

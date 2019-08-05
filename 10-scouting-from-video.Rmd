@@ -72,11 +72,11 @@ When we process the scouted file, the following rules are applied:
 
 ### Freeballs
 
-As of VBStats version 2.34.232, there isn't a specific action for freeballs. A freeball over (i.e. an easy ball put over the net to the opposition when no attack is possible) should be scouted as an attack, with the attack type "Dump". A freeball dig (the subsequent dig made on such a ball) should be scouted as a normal defense (dig) action.
+As of VBStats version 2.34.232, there isn't a specific action for freeballs. A freeball over (i.e. an easy ball put over the net to the opposition when no attack is possible) should be scouted as an attack, with the attack type "Dump" and setting zone "High". A freeball dig (the subsequent dig made on such a ball) should be scouted as a normal defense (dig) action.
 
 If the freeball over happens to win the point, it is important to include a dig following it, with "error" evaluation. If no opposition player actually performed a dig, scout the dig anyway, and assign it to the player who should have made the dig (see the "Assigning errors" section below).
 
-When the scouted file is processed, any "dump" attacks performed by a setter will be treated as a setter dump, but any "dump" attacks performed by a non-setter will be treated as a freeball over. Additionally, any dig following a freeball over will be treated as a freeball dig. This allows us to examine freeball-specific statistics, if we wish.
+When the scouted file is processed, any "dump" attacks performed by a setter will be treated as setter dumps, but "high dump" attacks (by a setter) and "dump" attacks (by non-setters) will be treated as freeballs over. Additionally, any dig following a freeball over will be treated as a freeball dig. This allows us to examine freeball-specific statistics, if we wish.
 
 ### Blocks
 
