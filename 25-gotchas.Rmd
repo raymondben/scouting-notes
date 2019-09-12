@@ -1,6 +1,8 @@
 # Common VBStats issues
 
-- As of VBStats version 2.34.232, it is not possible to enter further actions (during the same point) after a serve ace or attack kills. But we want to know who made the reception or dig error, so we need to enter that action as well. There are three options, with the first being the preferred method:
+- At the start of every point, check that the correct setter is designated for both teams (the setter has an asterisk by their number in the right-hand panel). If the setter on court changes, you need to change the designated setter using the lineup button (button 9 at the bottom of [this page](http://peranasports.com/VBStatsHD/Guide/lessons/Screen_detail.html)). If a team is using two setters (e.g. back row setters in a 6-2 style rotation system) then you will need to change the designated setter every three rotations.
+
+- As of VBStats version 2.34.232, it is not possible to enter further actions (during the same point) after a serve ace or attack kills. But if we want to know who made the reception or dig error, we need to enter that action as well. There are three options, with the first being the preferred method:
 
     - enter the serve as S3 (with its ball path and serve type), then enter the pass action (error), then go back and alter the serve evaluation to "Ace". This will also work for attack kills/dig errors (enter the attack as "Spike in play" first, then the dig error, then change the spike to "Kill"). This method will work for both serve ace/pass errors as well as attack kill/dig errors.
     - enter only the reception error. The serve action will be automatically entered, but you then have to go back to the serve and enter its ball path and serve type. (This won't work for attack kill/dig errors though).

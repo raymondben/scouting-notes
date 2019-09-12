@@ -1,5 +1,7 @@
 # VBStats live match scouting
 
+Scouting live matches is much the same as scouting from video, but because we are scouting in real time we are limited in what can be scouted. We can't scout every touch of the ball. The focus is therefore on scouting the data that gives the most valuable in-game information for the coach.
+
 - Scout both teams (button 18 [on this screen](http://peranasports.com/VBStatsHD/Guide/lessons/Match_detail.html))
 - The priority is to record the following actions:
   1. serve

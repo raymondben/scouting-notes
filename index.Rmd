@@ -11,7 +11,7 @@ cover-image: "images/cover.png"
 
 # About this
 
-Blah blah
+Some notes on scouting and analysis of volleyball matches.
 
 Generated using [bookdown](https://github.com/rstudio/bookdown); the source material is [on GitHub](https://github.com/raymondben/scouting-notes).
 
