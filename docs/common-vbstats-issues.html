@@ -31,14 +31,14 @@
   
   
 <link rel="prev" href="vbstats-live-match-scouting.html">
-<link rel="next" href="what-information-can-we-get-from-this-data.html">
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
 
 
 
@@ -88,8 +88,8 @@
 <li class="chapter" data-level="4.4.2" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#reception"><i class="fa fa-check"></i><b>4.4.2</b> Reception</a></li>
 <li class="chapter" data-level="4.4.3" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#freeball-digs"><i class="fa fa-check"></i><b>4.4.3</b> Freeball digs</a></li>
 <li class="chapter" data-level="4.4.4" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#attack"><i class="fa fa-check"></i><b>4.4.4</b> Attack</a></li>
-<li class="chapter" data-level="4.4.5" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#block"><i class="fa fa-check"></i><b>4.4.5</b> Block</a></li>
-<li class="chapter" data-level="4.4.6" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#set"><i class="fa fa-check"></i><b>4.4.6</b> Set</a></li>
+<li class="chapter" data-level="4.4.5" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#set"><i class="fa fa-check"></i><b>4.4.5</b> Set</a></li>
+<li class="chapter" data-level="4.4.6" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#block"><i class="fa fa-check"></i><b>4.4.6</b> Block</a></li>
 <li class="chapter" data-level="4.4.7" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#dig"><i class="fa fa-check"></i><b>4.4.7</b> Dig</a></li>
 </ul></li>
 </ul></li>
@@ -100,7 +100,6 @@
 <li class="chapter" data-level="5.4" data-path="vbstats-live-match-scouting.html"><a href="vbstats-live-match-scouting.html#the-action-that-ended-the-rally"><i class="fa fa-check"></i><b>5.4</b> The action that ended the rally</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="common-vbstats-issues.html"><a href="common-vbstats-issues.html"><i class="fa fa-check"></i><b>6</b> Common VBStats issues</a></li>
-<li class="chapter" data-level="7" data-path="what-information-can-we-get-from-this-data.html"><a href="what-information-can-we-get-from-this-data.html"><i class="fa fa-check"></i><b>7</b> What information can we get from this data?</a></li>
 </ul>
 
       </nav>
@@ -121,7 +120,7 @@
 <div id="common-vbstats-issues" class="section level1">
 <h1><span class="header-section-number">6</span> Common VBStats issues</h1>
 <ul>
-<li><p>At the start of every point, check that the correct setter is identified for both teams. The setter has an asterisk by their number in the right-hand panel. If the setter changes on court you need to change the designated setter using the lineup button (button 9 at the bottom of <a href="http://peranasports.com/VBStatsHD/Guide/lessons/Screen_detail.html">this page</a>). If a team is using two setters (e.g. back row setters in a 6-2 style rotation system) then you will need to change the designated setter every three rotations.</p></li>
+<li><p>At the start of every point, check that the correct setter is designated for both teams (the setter has an asterisk by their number in the right-hand panel). If the setter on court changes, you need to change the designated setter using the lineup button (button 9 at the bottom of <a href="http://peranasports.com/VBStatsHD/Guide/lessons/Screen_detail.html">this page</a>). If a team is using two setters (e.g. back row setters in a 6-2 style rotation system) then you will need to change the designated setter every three rotations.</p></li>
 <li><p>As of VBStats version 2.34.232, it is not possible to enter further actions (during the same point) after a serve ace or attack kills. But if we want to know who made the reception or dig error, we need to enter that action as well. There are three options, with the first being the preferred method:</p>
 <ul>
 <li>enter the serve as S3 (with its ball path and serve type), then enter the pass action (error), then go back and alter the serve evaluation to “Ace”. This will also work for attack kills/dig errors (enter the attack as “Spike in play” first, then the dig error, then change the spike to “Kill”). This method will work for both serve ace/pass errors as well as attack kill/dig errors.</li>
@@ -139,17 +138,17 @@
           </div>
         </div>
       </div>
-<a href="vbstats-live-match-scouting.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="what-information-can-we-get-from-this-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="vbstats-live-match-scouting.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({

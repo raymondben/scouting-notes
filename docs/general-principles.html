@@ -32,13 +32,13 @@
   
 <link rel="prev" href="why-scouting-and-statistical-analysis.html">
 <link rel="next" href="vbstats-scouting-from-video.html">
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
 
 
 
@@ -88,8 +88,8 @@
 <li class="chapter" data-level="4.4.2" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#reception"><i class="fa fa-check"></i><b>4.4.2</b> Reception</a></li>
 <li class="chapter" data-level="4.4.3" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#freeball-digs"><i class="fa fa-check"></i><b>4.4.3</b> Freeball digs</a></li>
 <li class="chapter" data-level="4.4.4" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#attack"><i class="fa fa-check"></i><b>4.4.4</b> Attack</a></li>
-<li class="chapter" data-level="4.4.5" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#block"><i class="fa fa-check"></i><b>4.4.5</b> Block</a></li>
-<li class="chapter" data-level="4.4.6" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#set"><i class="fa fa-check"></i><b>4.4.6</b> Set</a></li>
+<li class="chapter" data-level="4.4.5" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#set"><i class="fa fa-check"></i><b>4.4.5</b> Set</a></li>
+<li class="chapter" data-level="4.4.6" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#block"><i class="fa fa-check"></i><b>4.4.6</b> Block</a></li>
 <li class="chapter" data-level="4.4.7" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#dig"><i class="fa fa-check"></i><b>4.4.7</b> Dig</a></li>
 </ul></li>
 </ul></li>
@@ -100,7 +100,6 @@
 <li class="chapter" data-level="5.4" data-path="vbstats-live-match-scouting.html"><a href="vbstats-live-match-scouting.html#the-action-that-ended-the-rally"><i class="fa fa-check"></i><b>5.4</b> The action that ended the rally</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="common-vbstats-issues.html"><a href="common-vbstats-issues.html"><i class="fa fa-check"></i><b>6</b> Common VBStats issues</a></li>
-<li class="chapter" data-level="7" data-path="what-information-can-we-get-from-this-data.html"><a href="what-information-can-we-get-from-this-data.html"><i class="fa fa-check"></i><b>7</b> What information can we get from this data?</a></li>
 </ul>
 
       </nav>
@@ -127,17 +126,19 @@
 <li>Communicating that information to relevant end-users and ensuring that the information being generated is appropriate for that end-user audience. Often the end-users are coaches and players, but in other cases might be sponsors or the general public, and so the information and level of detail that is needed for one audience might not be appropriate for another.</li>
 </ol>
 <p>In this guide we’re mostly focusing on #1, but bearing in mind that we need to deliver #2 and #3.</p>
+<p>Parts 1 and 2 can be done on paper (not addressed here), or by computer.</p>
 <div id="principles" class="section level2">
 <h2><span class="header-section-number">3.1</span> Principles</h2>
-<p>We want to collect our raw data in such a way that it:</p>
+<p>We want to collect our raw data in such a way that they are:</p>
 <ul>
-<li>is as objective as possible, by minimizing subjective assessments by the scout.</li>
-<li>is consistent (from one scout to another, and also over time for the same scout).</li>
-<li>is appropriate for the specific needs of the users. For example, if the team is using a particular defensive strategy, the coach is likely to want to be able to evaluate it. The data that we collect and statistics that we generate should thus provide information that allows performance against that strategy, and the overall effectiveness of that strategy, to be evaluated.</li>
-<li>at the same time, we want to maximize the value of the data that we collect for different analyses (i.e. we can answer a range of different questions using these data, rather than collecting data that can only be used to answer a narrow range of questions). In particular we want to keep our options open for answering questions that we haven’t thought of yet. There is a distinction between the <em>data being scouted</em> and the <em>information that can be extracted from those data</em>. In some cases the information that we want to report isn’t directly obvious in the data that we are collecting, and some further statistical analysis is required to extract it.</li>
-<li>is efficient, by balancing the demands on the scout against the value of the information that we ask them to collect. Every extra detail that we ask them to scout adds effort: does that extra detail actually give us valuable information? Can we avoid scouting it manually because it be inferred or filled in automatically later?</li>
+<li>as objective as possible, by minimizing subjective assessments by the scout.</li>
+<li>consistent (from one scout to another, and also over time for the same scout).</li>
+<li>appropriate for the specific needs of the users. For example, if the team is using a particular defensive strategy, the coach is likely to want to be able to evaluate it. The data that we collect and statistics that we generate should thus provide information that allows performance against that strategy, and the overall effectiveness of that strategy, to be evaluated.</li>
+<li>at the same time, we want to maximize the value of the data that we collect for different analyses (i.e. we can answer a range of different questions using these data, rather than collecting data that can only be used to answer a narrow range of questions). In particular we want to keep our options open for answering questions that we haven’t thought of yet.</li>
+<li>is efficient, by balancing the demands on the scout against the value of the information that we ask them to collect. Every extra detail that we ask them to scout adds effort: does that extra detail actually give us valuable information? Can we avoid scouting it manually because it can be inferred or filled in automatically later?</li>
 <li>follows any established community norms or conventions, if necessary.</li>
 </ul>
+<p>There is an important distinction between the <em>data being scouted</em> and the <em>information that can be extracted from those data</em>. In some cases the information that we want to report isn’t directly obvious in the data that we are collecting, and some further analysis might be required to extract it.</p>
 </div>
 <div id="software" class="section level2">
 <h2><span class="header-section-number">3.2</span> Software</h2>
@@ -156,11 +157,7 @@
 </div>
 <div id="online-apps" class="section level4">
 <h4><span class="header-section-number">3.2.2.2</span> Online apps</h4>
-<p>Science Untangled maintains a <a href="https://apps.untan.gl/">suite of online analytical apps</a>. They work with files scouted in DataVolley or VBStats and provide analytical capability that complements or improves on the inbuilt analytical capabilities of those packages.</p>
-</div>
-<div id="r" class="section level4">
-<h4><span class="header-section-number">3.2.2.3</span> R</h4>
-<p>For complete control and customization, you can write your own analysis routines if you are so inclined. The R packages <a href="https://github.com/raymondben/peranavolley">peranavolley</a> and <a href="https://github.com/raymondben/datavolley">datavolley</a> provide a starting point for this, by allowing DataVolley and VBStats files to be read into the R software package. You then have the full arsenal of R’s inbuilt statistical and graphing capability at your disposal, as well as its <a href="https://cran.r-project.org/web/packages/">~15,000 user-contributed packages</a>. The untan.gl apps are built with R.</p>
+<p>Alternatively, data can be exported from the scouting package and analyzed elsewhere. Science Untangled maintains a <a href="https://apps.untan.gl/">suite of online analytical apps</a>. They work with files scouted in DataVolley or VBStats and provide analytical capability that complements or improves on the inbuilt analytical capabilities of those packages.</p>
 
 </div>
 </div>
@@ -175,13 +172,13 @@
 <a href="vbstats-scouting-from-video.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({

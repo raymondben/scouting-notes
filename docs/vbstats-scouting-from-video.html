@@ -32,13 +32,13 @@
   
 <link rel="prev" href="general-principles.html">
 <link rel="next" href="vbstats-live-match-scouting.html">
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
 
 
 
@@ -88,8 +88,8 @@
 <li class="chapter" data-level="4.4.2" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#reception"><i class="fa fa-check"></i><b>4.4.2</b> Reception</a></li>
 <li class="chapter" data-level="4.4.3" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#freeball-digs"><i class="fa fa-check"></i><b>4.4.3</b> Freeball digs</a></li>
 <li class="chapter" data-level="4.4.4" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#attack"><i class="fa fa-check"></i><b>4.4.4</b> Attack</a></li>
-<li class="chapter" data-level="4.4.5" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#block"><i class="fa fa-check"></i><b>4.4.5</b> Block</a></li>
-<li class="chapter" data-level="4.4.6" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#set"><i class="fa fa-check"></i><b>4.4.6</b> Set</a></li>
+<li class="chapter" data-level="4.4.5" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#set"><i class="fa fa-check"></i><b>4.4.5</b> Set</a></li>
+<li class="chapter" data-level="4.4.6" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#block"><i class="fa fa-check"></i><b>4.4.6</b> Block</a></li>
 <li class="chapter" data-level="4.4.7" data-path="vbstats-scouting-from-video.html"><a href="vbstats-scouting-from-video.html#dig"><i class="fa fa-check"></i><b>4.4.7</b> Dig</a></li>
 </ul></li>
 </ul></li>
@@ -100,7 +100,6 @@
 <li class="chapter" data-level="5.4" data-path="vbstats-live-match-scouting.html"><a href="vbstats-live-match-scouting.html#the-action-that-ended-the-rally"><i class="fa fa-check"></i><b>5.4</b> The action that ended the rally</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="common-vbstats-issues.html"><a href="common-vbstats-issues.html"><i class="fa fa-check"></i><b>6</b> Common VBStats issues</a></li>
-<li class="chapter" data-level="7" data-path="what-information-can-we-get-from-this-data.html"><a href="what-information-can-we-get-from-this-data.html"><i class="fa fa-check"></i><b>7</b> What information can we get from this data?</a></li>
 </ul>
 
       </nav>
@@ -128,15 +127,15 @@
 <ul>
 <li>P3 = a good or perfect pass, giving the setter the option to set to any attacker (in DataVolley this would be scouted as “R#” or “R+”)</li>
 <li>P2 = an “ok” pass (DataVolley “R!”), giving restricted attack options (but still more than one option). Often these are passes that force the setter to set from 3m or more from the net. The setter doesn’t have the option to set a true first tempo, but outside attacks can be made at normal medium/fast tempo. Note that some setters will still set their middle on these sets with a slower (low) quick ball. Mild overpasses or poorly positioned passes might also be rated as P2, if the setter only has two real options (say, the quick hitter and opposite on a low pass to position 2)</li>
-<li>P1 = a negative pass or an overpass (DataVolley “R-” or “R/”), generally only allowing a high ball set to be made or even no proper attack at all (a freeball back to the opposition or an overapass)</li>
+<li>P1 = a negative pass or an overpass (DataVolley “R-” or “R/”), generally only allowing a high ball set to be made or even no proper attack at all (a freeball back to the opposition or an overpass)</li>
 </ul>
-<p>Rotation error by the receiving team: TBD</p>
+<p>Rotation error by the receiving team: there doesn’t seem to be a way of specifically recording rotation faults. But you can just adjust the team scores to give the serving team an extra point (click the scores in the middle of the top toolbar (<a href="http://peranasports.com/VBStatsHD/Guide/lessons/Screen_detail.html">button 6</a>)).</p>
 </div>
 <div id="serves" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> Serves</h3>
 <p>Rate serves by pass quality, so that a poor serve (S1) is one that allowed a perfect pass (P3), an OK serve (S2) with an OK pass (P2), and a good serve (S3) was one that the opposition was only able to make a poor pass (P1) on.</p>
 <p>On serve errors, enter the ball path and also indicate the reason (net/out long/out side).</p>
-<p>Rotation error by the serving team: TBD</p>
+<p>Rotation error by the serving team: there doesn’t seem to be a way of specifically recording rotation faults. But you can just adjust the team scores to give the receiving team an extra point (click the scores in the middle of the top toolbar (<a href="http://peranasports.com/VBStatsHD/Guide/lessons/Screen_detail.html">button 6</a>)), and also adjust the rotation of the receiving team (so that the correct player is next to serve (button 9 at the bottom of <a href="http://peranasports.com/VBStatsHD/Guide/lessons/Screen_detail.html">this page</a>).</p>
 </div>
 </div>
 <div id="entering-ball-paths" class="section level2">
@@ -213,7 +212,8 @@
 </div>
 <div id="blocks" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Blocks</h3>
-<p>TBD - how to handle blocks and block touches.</p>
+<p>Scout any block errors or block kills. Block kills are most easily entered by scouting an attack of type “error” with reason “blocked” — when you select “blocked” it will pop up a list of opposition players and ask you to select the blockers. If it was a multiplayer block, select all players that were blocking (if entering the block action directly, use “block assist” if it was a multiplayer block and “block solo” for a single-player block).</p>
+<p>A player making a block touch can be entered as a “block control” action, but don’t bother unless the coach has asked for these to be scouted. Block touches aren’t generally used in match reports, and we have other analytical tools to help us assess block performance. Remember also that we scout attacks as “off-block” in this situation, so we will know during the analysis that a block touch occurred even though we don’t have an explicit action for it.</p>
 </div>
 </div>
 <div id="assigning-errors" class="section level2">
@@ -222,11 +222,11 @@
 <p>The following describes our conventions, from most straightforward to most confusing.</p>
 <div id="serve" class="section level3">
 <h3><span class="header-section-number">4.4.1</span> Serve</h3>
-<p>Any serve fault is scouted as an error (foot fault, serve out, serve into the net). Rotation errors should also be scouted (not clear how best to do this in VBStats though?)</p>
+<p>Any serve fault is scouted as an error (foot fault, serve out, serve into the net).</p>
 </div>
 <div id="reception" class="section level3">
 <h3><span class="header-section-number">4.4.2</span> Reception</h3>
-<p>A serve ace should <em>always</em> be accompanied by a reception error, and vice-versa. For a serve ace, the reception error should be assigned to the player who had responsibility for passing that serve. If the ball lands between two receiving players, assign the error to the one that was most at fault. Rotation errors should also be scouted (TBD how to best enter these in VBStats).</p>
+<p>A serve ace should <em>always</em> be accompanied by a reception error, and vice-versa. For a serve ace, the reception error should be assigned to the player who had responsibility for passing that serve. If the ball lands between two receiving players, assign the error to the one that was most at fault. An extremely poor reception that gets a second touch but can’t be put back over the net should probably be considered to be a reception error.</p>
 </div>
 <div id="freeball-digs" class="section level3">
 <h3><span class="header-section-number">4.4.3</span> Freeball digs</h3>
@@ -236,33 +236,38 @@
 <h3><span class="header-section-number">4.4.4</span> Attack</h3>
 <p>Direct errors by the attacker (net violation, reach, hit out, hit into the net, back-row attacker inside the 3m line, etc) should be scouted as attack errors.</p>
 <p>Blocked attacks are not usually considered to be errors for the purposes of <em>analysis</em>, but with some scouting software they must be <em>scouted</em> as errors (e.g. in VBStats a blocked attack must be entered as an error, with reason “blocked”. These will not be treated as errors in our downstream analyses, though).</p>
-</div>
-<div id="block" class="section level3">
-<h3><span class="header-section-number">4.4.5</span> Block</h3>
-<p>For blocking, only scout errors that are direct errors by the blocking player (net violation, reach, catch, back-row player blocking, etc).
-An attack hit that goes off the block for a kill is not scouted as a block error (recall that these should be scouted as “off-block” by entering a <a href="http://peranasports.com/VBStatsHD/Guide/lessons/Draw_ball_paths.html">ball path that goes off the block</a> and selecting the “off-block” option in the <a href="http://peranasports.com/VBStatsHD/Guide/lessons/images/How_to_code/media_1508305638411.png">detail screen</a> if it has not automatically been selected).</p>
-<p>A blocker who is out of position leading to an attack kill is not scouted as an error, even though it might be considered to be one by many coaches. In our downstream analyses, we can get insights into blocker position by other means, so we keep the scouting of “block errors” for direct (unforced) blocking errors.</p>
+<p>An error on a very poor set is probably not an attack error (e.g. an unhittable, mis-timed quick set), but this may be subjective.</p>
 </div>
 <div id="set" class="section level3">
-<h3><span class="header-section-number">4.4.6</span> Set</h3>
+<h3><span class="header-section-number">4.4.5</span> Set</h3>
 <p>Any set fault that leads directly to the loss of a point (double-contact, net violation, reach, etc) should be scouted as an error, as should any poor set that directly leads to the loss of a point (e.g. an unhittable set).</p>
-<p>There is an unavoidable element of subjectivity in this situation: say there was a poor set that the attacker tried to save, but contacted the net in doing so. If the set was clearly un-saveable, then the error was the setter’s. If the set was tight on the net (but playable) and the attacker just made a mess of saving it, then the error was the attacker’s. But there will be situations where it is not entirely clear whether it was the setter’s fault for a poor set or the attacker’s fault for failing to play it. There is no simple answer here - assign the error to whichever player you think was most at fault. Set errors are relatively rare, so this one usually doesn’t matter tremendously.</p>
+<p>Setting errors often have an unavoidable element of subjectivity, for example:</p>
+<ul>
+<li>a poor (nearly unsettable) pass called for double contact (assign the error to whichever player you think was most at fault. It might reasonably be considered to be a set error if the setter chose to try and finger-set it rather than bump-set)</li>
+<li>a poor set that the attacker tried to save, but contacted the net in doing so (assign the error to whichever player you think was most at fault)</li>
+</ul>
 <p>Other subjective situations include tactical/decision mistakes, e.g.:</p>
 <ul>
 <li>a set that goes to an attacker who is out of position and makes an error in attempting to hit it (probably scout as attacker error)</li>
 <li>a set that goes to an attacker with 3 blockers when another attacker is entirely open, and the point is lost on that attack (do not scout as a set error).</li>
 </ul>
 </div>
+<div id="block" class="section level3">
+<h3><span class="header-section-number">4.4.6</span> Block</h3>
+<p>For blocking, only scout errors that are direct errors by the blocking player (net violation, reach, catch, back-row player blocking, etc).
+An attack hit that goes off the block for a kill is not scouted as a block error (recall that these should be scouted as “off-block” by entering a <a href="http://peranasports.com/VBStatsHD/Guide/lessons/Draw_ball_paths.html">ball path that goes off the block</a> and selecting the “off-block” option in the <a href="http://peranasports.com/VBStatsHD/Guide/lessons/images/How_to_code/media_1508305638411.png">detail screen</a> if it has not automatically been selected).</p>
+<p>A blocker who is out of position and fails to block, leading to an attack kill is not scouted as an error, even though it might be considered to be one by many coaches. In our downstream analyses, we can get insights into blocker position by other means, so we keep the scouting of “block errors” for direct blocking errors.</p>
+</div>
 <div id="dig" class="section level3">
 <h3><span class="header-section-number">4.4.7</span> Dig</h3>
-<p>Dig (defensive) errors are perhaps the least clear. Some defensive plays are clearly errors (defender out of position, or an easy ball that should have been dug, or an attack in that was not played because the defender incorrectly decided that the ball was going to land out). However, there are also many situations in which a defender makes a forced error — say, trying to dig a hard attack hit. We have two choices here.</p>
+<p>Dig (defensive) errors are perhaps the least clear. Some defensive plays are clearly errors (defender out of position, or an easy ball that should have been dug, or an attack in that was not played because the defender incorrectly decided that the ball was going to land out). However, there are also many situations in which a defender makes a forced error — say, trying to dig a hard attack hit. There are two extremes here:</p>
 <ol style="list-style-type: decimal">
 <li><p>We could assign a dig error to <em>every</em> defensive touch that leads to the loss of a point (i.e. forced plus unforced errors). The advantage to this is that we would definitely capture all unforced errors, but the downside is that we will include a lot of forced errors as well. We will also potentially be assigning errors to a defender that were primarily another player’s fault (e.g. a blocker out of position, giving the opposition an attack against no block, leading to a dig “error”).<br /><br />
 We can still extract useful information from this data, but it requires some level of analysis after collection. The raw dig error rates, for example, are probably not meaningful in the way that most coaches would interpret them (because they are an unknown mix of forced and unforced errors).</p></li>
 <li><p>Alternatively, we can choose to only scout unforced defensive errors (e.g. defender out of position, a poor dig on an easy opposition attack that should have been defended, or a defender failing to play a ball at all because they decided it was going out).<br /><br />
 The disadvantage to this is that it becomes subjective (e.g. the concept of an “easy opposition attack” will vary from scout to scout and competition to competition). It may also limit the range of analyses that we can later do with these data. In particular, different defenders may be difficult to compare (e.g. amazing defender A who successfully digs a lot of hard-driven balls, compared to poor defender B who makes errors on similar balls. A scout might very well not include the errors of defender B on the basis that they were forced errors, making defender B look better than they actually are in relation to defender A).</p></li>
 </ol>
-<p>On balance, we choose the first option: scout all defensive errors, forced and unforced. There will be some circumstances in which it is genuinely impossible to assign a defensive error to an individual player (e.g. an team’s defensive system deliberately leaves a certain part of the court undefended, and an attack lands in that open zone — it’s not necessarily going to be clear whose responsibility that ball was). Scout an attack kill with no corresponding error in these cases, but they should be relatively infrequent.</p>
+<p>On balance, we recommend the first option: scout all defensive errors, forced and unforced. There will be some circumstances in which it is genuinely impossible to assign a defensive error to an individual player (e.g. an team’s defensive system deliberately leaves a certain part of the court undefended, and an attack lands in that open zone — it’s not necessarily going to be clear whose responsibility that ball was). Scout an attack kill with no corresponding error in these cases, but they should be relatively infrequent.</p>
 
 </div>
 </div>
@@ -276,13 +281,13 @@ The disadvantage to this is that it becomes subjective (e.g. the concept of an 
 <a href="vbstats-live-match-scouting.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
