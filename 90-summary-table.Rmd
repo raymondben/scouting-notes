@@ -1,0 +1,119 @@
+# Appendix 1: Scouting profiles
+
+```{r}
+Y <- "\u2713" ## yes
+N <- "\ud7" ## no
+A <- "A" ## auto
+P <- paste0("(", Y, ")") ## if you have time
+first_col_width <- "3cm"
+##Entries marked with ``r A`` are entered automatically. 
+
+```
+
+This appendix describes different scouting profiles that have differing levels of detail and are intended to be used for different purposes.
+
+Entries marked ``r P`` should be entered if you have time.
+
+## Overview
+ 
+```{r}
+tx <- tribble(~Profile, ~`Comments`, ~`Scouting time requirements`, ~`Analytical comments`,
+              "Live",   "To be used when scouting live. Does not include transition actions, only serve, reception, first attack, and the action that ended the rally. Not all details for all skills are included.", "Least", "Somewhat limited, details TBD.",
+              "Video",  "To be used when scouting from video. Includes all actions except sets (unless they were errors).", "Most", "")
+
+kable(tx, escape = FALSE) %>% kable_styling(full_width = FALSE) %>%
+    column_spec(1, bold = TRUE, width = first_col_width) %>%
+    column_spec(2, border_left = TRUE, include_thead = TRUE)
+
+```
+
+
+Which skills to scout for each profile?
+
+```{r}
+tx <- tribble(~Profile, ~Serve,     ~Reception, ~Set,       ~`First attack or freeball over`, ~`Transition attacks or freeballs over`, ~Digs, ~Blocks,
+              "Live",   paste0("Only if error", footnote_marker_symbol(1)), Y,          "Only if error", Y,                             "Only if error/kill",                      "Only if error",     "Only if error/kill",
+              "Video",  Y,          Y,          "Only if error", Y,                             Y,                                    Y,     "Only if error/kill")
+
+kable(tx, escape = FALSE) %>% kable_styling(full_width = FALSE, bootstrap_options = "basic") %>%
+    column_spec(1, bold = TRUE, width = first_col_width) %>%
+    column_spec(2, border_left = TRUE, include_thead = TRUE) %>%
+    footnote(symbol = c("Scouting the reception action causes the serve action to be automatically inserted, so we only need to insert the serve action ourselves if the serve was an error."), footnote_as_chunk = TRUE)##, symbol_manual = "&dagger;") ## symbol_manual does not work, it changes the symbol in the footer but not the marker in the table itself
+
+```
+
+## Details
+
+Which details to scout for each skill?
+
+### Serve/reception details
+
+```{r}
+t_srv <- tribble(~Profile, ~`Serve type`, ~Outcome,                           ~`Ball Path`, ~`Error reason`, ~Outcome, ~`Ball path`,
+                 "Live",   N,             "Only if error, otherwise is automatically generated from the reception outcome", paste0(N, footnote_marker_symbol(1)),            Y,               Y,        paste0(P, footnote_marker_symbol(1)),
+                 "Video",  Y,             Y,                                  Y,            Y,               Y,        N)
+
+kable(t_srv, escape = FALSE) %>% 
+    kable_styling(full_width = FALSE) %>%
+    column_spec(1, bold = TRUE, width = first_col_width) %>%
+    add_header_above(c(" ", "Serving" = 4, "Reception" = 2)) %>%
+    column_spec(c(2, 6), border_left = TRUE, include_thead = TRUE) %>%
+    footnote(symbol = "For our online apps, serve ball paths can be entered on either the serve action or reception action, and when live-scouting it is easier to enter these on the reception action. But be aware that the reporting functionality within VBStats itself will not recognize serve ball paths entered on reception actions.", footnote_as_chunk = TRUE)
+
+```
+
+- "Serve type" is Jump/Jump float/Float/Topspin
+- "Ball path" is the path of the ball on the court diagram
+- "Outcome" is the serve grading (Error/S1/S2/S3/Ace) or reception grading (Error/P1/P2/P3)
+- "Error reason" is Net/Out long/Out side
+
+### Setting details
+
+Generally we don't need to scout the setting action, unless it was an error. The only situations in which it is necessary to scout the setting action is if we wish to know when balls are set by players other than the setter, or if we wish to know the position on court where each set was made from.
+
+```{r}
+t_set <- tribble(~Profile, ~Outcome,
+                 "Live",   "Only if error",
+                 "Video",  "Only if error")
+
+kable(t_set) %>% kable_styling(full_width = FALSE) %>% column_spec(1, bold = TRUE, width = first_col_width) %>% column_spec(2, border_left = TRUE, include_thead = TRUE)
+
+
+```
+
+- "Outcome" is Error/Set attempt/Set assist
+
+
+### First attack details
+
+```{r}
+t_fa <- tribble(~Profile,                                              ~Outcome, ~`Ball Path`, ~`Hit type`, ~`Number of blockers`, ~`Setting zone`, ~`Error reason`,
+                 "Live (if first attack was error, blocked, or kill)", Y,        Y,            Y,           P,                     Y,               Y,
+                 "Live (if rally continued)",                          Y,        N,            Y,           P,                     Y,               "N/A",
+                 "Video",                                              Y,        Y,            Y,           Y,                     Y,               Y)
+
+kable(t_fa) %>% kable_styling(full_width = FALSE) %>% column_spec(1, bold = TRUE, width = first_col_width) %>% column_spec(2, border_left = TRUE, include_thead = TRUE)
+
+```
+
+- "Outcome" is Error/In play/Kill
+- "Ball path" is the path of the ball on the court diagram
+- "Hit type" is Power/Off-speed/Dump/Off-block. Note that we treat hits as "power" by default. A "dump" is used to indicate a setter tip, except when combined with setting zone "high" (a "high dump" is interpreted by our software as a freeball over, but note that VBStats does not use this convention)
+- "Number of blockers" is No block/1 block/2 blocks/3 blocks
+- "Setting zone" is by our convention "Quick", "Quick behind", "B quick", "Slide", or "High"
+- "Error reason" is Out/Blocked/Net/Net touch
+
+### Transition attack details
+
+```{r}
+t_fa <- tribble(~Profile,                                        ~Outcome, ~`Ball Path`, ~`Hit type`, ~`Number of blockers`, ~`Setting zone`, ~`Error reason`,
+                 "Live (if attack was error, blocked, or kill)", Y,        Y,            Y,           P,                     Y,               Y,
+                 "Live (if rally continued)",                    N,        N,            N,           N,                     N,               "N/A",
+                 "Video",                                        Y,        Y,            Y,           Y,                     Y,               Y)
+
+kable(t_fa) %>% kable_styling(full_width = FALSE) %>% column_spec(1, bold = TRUE, width = first_col_width) %>% column_spec(2, border_left = TRUE, include_thead = TRUE)
+
+```
+
+- remember that for the "Live" profile, we don't scout transition attack actions unless they were errors or kills (i.e. they caused a rally to end)
+- interpretation of "Outcome", "Ball path", etc is the same as for "First attack details", above

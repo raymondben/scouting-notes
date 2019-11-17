@@ -17,6 +17,10 @@ Generated using [bookdown](https://github.com/rstudio/bookdown); the source mate
 
 
 ```{r mainsetup, include = FALSE}
+library(knitr)
+library(kableExtra)
+library(formattable)
+
 knitr::opts_chunk$set(echo = FALSE, collapse = TRUE, comment = "#>", warning = FALSE, message = FALSE)
 
 library(dplyr)

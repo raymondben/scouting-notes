@@ -12,7 +12,7 @@ This guide describes a particular set of conventions for scouting volleyball mat
 
 - P3 = a good or perfect pass, giving the setter the option to set to any attacker (in DataVolley this would be scouted as "R#" or "R+")
 - P2 = an "ok" pass (DataVolley "R!"), giving restricted attack options (but still more than one option). Often these are passes that force the setter to set from 3m or more from the net. The setter doesn't have the option to set a true first tempo, but outside attacks can be made at normal medium/fast tempo. Note that some setters will still set their middle on these sets with a slower (low) quick ball. Mild overpasses or poorly positioned passes might also be rated as P2, if the setter only has two real options (say, the quick hitter and opposite on a low pass to position 2)
-- P1 = a negative pass or an overpass (DataVolley "R-" or "R/"), generally only allowing a high ball set to be made or even no proper attack at all (a freeball back to the opposition or an overpass)
+- P1 = a negative pass or an overpass (DataVolley "R-" or "R/"), generally only giving the setter a single normal-tempo setting option (they might also have high ball options to other attackers) or even no attack at all (a freeball back to the opposition or an overpass)
 
 Rotation error by the receiving team: there doesn't seem to be a way of specifically recording rotation faults. But you can just adjust the team scores to give the serving team an extra point (click the scores in the middle of the top toolbar ([button 6](http://peranasports.com/VBStatsHD/Guide/lessons/Screen_detail.html))).
 
@@ -77,7 +77,12 @@ When the scouted file is processed, any "dump" attacks performed by a setter wil
 
 ### Blocks
 
-Scout any block errors or block kills. Block kills are most easily entered by scouting an attack of type "error" with reason "blocked" &mdash; when you select "blocked" it will pop up a list of opposition players and ask you to select the blockers. If it was a multiplayer block, select all players that were blocking (if entering the block action directly, use "block assist" if it was a multiplayer block and "block solo" for a single-player block).
+Scout any block errors or block kills. Block kills are most easily entered by scouting an attack of type "error" with reason "blocked" &mdash; when you select "blocked" it will pop up a list of opposition players and ask you to select the blockers. If it was a multiplayer block, *only select one blocker* (the one who actually blocked the ball. Some volleyball analytical software allows multiple blockers to be identified in this situation, with each blocker being credited with a "block assist". However, not all software supports this.)
+
+```{r}
+## old words, commented out for the time being
+##select all players that were blocking (if entering the block action directly, use "block assist" if it was a multiplayer block and "block solo" for a single-player block).
+```
 
 A player making a block touch can be entered as a "block control" action, but don't bother unless the coach has asked for these to be scouted. Block touches aren't generally used in match reports, and we have other analytical tools to help us assess block performance. Remember also that we scout attacks as "off-block" in this situation, so we will know during the analysis that a block touch occurred even though we don't have an explicit action for it.
 
