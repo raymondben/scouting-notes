@@ -12,13 +12,11 @@ first_col_width <- "3cm"
 
 This appendix describes different scouting profiles that have differing levels of detail and are intended to be used for different purposes.
 
-Entries marked ``r P`` should be entered if you have time.
-
 ## Overview
- 
+
 ```{r}
 tx <- tribble(~Profile, ~`Comments`, ~`Scouting time requirements`, ~`Analytical comments`,
-              "Live",   "To be used when scouting live. Does not include transition actions, only serve, reception, first attack, and the action that ended the rally. Not all details for all skills are included.", "Least", "Somewhat limited, details TBD.",
+              "Live",   "To be used when scouting live. With this profile we only scout the serve, reception, first attack, and the action that ended each rally. Not all details for all actions are included.", "Least", "Somewhat limited, details TBD.",
               "Video",  "To be used when scouting from video. Includes all actions except sets (unless they were errors).", "Most", "")
 
 kable(tx, escape = FALSE) %>% kable_styling(full_width = FALSE) %>%
@@ -28,7 +26,7 @@ kable(tx, escape = FALSE) %>% kable_styling(full_width = FALSE) %>%
 ```
 
 
-Which skills to scout for each profile?
+Which actions to scout for each profile?
 
 ```{r}
 tx <- tribble(~Profile, ~Serve,     ~Reception, ~Set,       ~`First attack or freeball over`, ~`Transition attacks or freeballs over`, ~Digs, ~Blocks,
@@ -44,7 +42,7 @@ kable(tx, escape = FALSE) %>% kable_styling(full_width = FALSE, bootstrap_option
 
 ## Details
 
-Which details to scout for each skill?
+Which details to scout for each action? Entries marked ``r P`` should be entered if you have time (when scouting live) but can be skipped if not.
 
 ### Serve/reception details
 
